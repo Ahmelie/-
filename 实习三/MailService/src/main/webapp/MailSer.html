@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>EmailService</title>
+<link
+     href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"
+     rel="stylesheet" />
+</head>
+<body>
+    <img src="g1.gif" width="840"height="625"/>
+    <img src="g2.gif" width="510"height="625" style="margin-left:839px; margin-top:-648px"/>
+    <div class="middle-box text-center loginscreen animated fadeInDown" style="width:30em; margin-left:633px; margin-top:-450px;">
+        <h3>邮件服务</h3><br/>
+        <div class=" input-group input-group-md">
+            <span class="input-group-addon" id="sizing-addon1"></span> 
+            <input id="adress" type="text" class="form-control" placeholder="收件人"/>
+        </div><br/>
+        <div class=" input-group input-group-md">
+            <span class="input-group-addon" id="sizing-addon2"></span> 
+            <input id="massege" type="text" class="form-control" placeholder="消息"/>
+        </div><br/>
+        <button type="button" class="btn btn-success btn-block" onclick="confirm_onclick()">验证</button>
+        <button type="button" class="btn btn-success btn-block" onclick="send_onclick()">发送</button>
+    </div>
+
+    <script>
+	    function confirm_onclick() {
+	        var adrs = document.getElementById("adress").value;
+	        var msg = document.getElementById("massege").value;
+	        window.location="http://localhost:8080/MailService/ws/rest/email/hello/validateEmailAddress?_url="+adrs;
+	    }
+        function send_onclick() {
+            var adrs = document.getElementById("adress").value;
+            var msg = document.getElementById("massege").value;
+            window.location="http://localhost:8080/MailService/ws/rest/email/hello/sendEmail?_url="+adrs+"&_payload="+msg;
+        }
+    </script>
+    </div>
+</body>
+</html>
