@@ -15,7 +15,7 @@ import com.aliyuncs.profile.IClientProfile;
 @WebService
 @Component
 public class SoapServiceImpl implements SoapService {
-    IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4FrNGBec6WqR2SQiPk6E", "jb1s3CrOveiyveZemnQ1reStp9UTom");
+    IClientProfile profile = DefaultProfile.getProfile("cn-hangzhou", "****", "****");
     IAcsClient client = new DefaultAcsClient(profile);
     SingleSendMailRequest request = new SingleSendMailRequest();
     public SoapServiceImpl(){
